@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".PersonalCenter">
+
+<!-- Toolbar -->
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@drawable/personal_background"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme"
+    android:alpha="0.7"/>
+
+<!-- 用户信息区域 -->
+<RelativeLayout
+    android:id="@+id/profile_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/toolbar"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <!-- 用户头像 -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tom"
+        android:layout_centerVertical="true"/>
+
+    <!-- 用户名 -->
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profile_image"
+        android:layout_marginLeft="16dp"
+        android:text="Mr.Tom"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>
+
+<!-- 任务条区域 -->
+<LinearLayout
+    android:id="@+id/tasks_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/profile_container"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="我的大棚"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/btn_oval_background"
+        android:alpha="0.8"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="问题反馈"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/btn_oval_background"
+        android:alpha="0.8"
+        android:layout_marginTop="10dp"/>
+
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="退出登录"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/btn_background_unlogin"
+            android:alpha="0.8"
+            android:layout_marginTop="20dp"/>
+
+
+</LinearLayout>
+
+    <!-- 容器-->
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_nav_view"
+        android:layout_marginTop="20dp"/>
+
+    <!-- 导航栏视图-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@layout/bottom_nav_menu"
+        android:layout_gravity="center_horizontal"/>
+
+</RelativeLayout>

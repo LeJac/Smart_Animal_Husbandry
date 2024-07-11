@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <item
+        android:id="@+id/navigation_monitor"
+        android:title="数据监控"
+        android:icon="@drawable/nav_monitor" />
+
+    <item
+        android:id="@+id/navigation_control"
+        android:title="设备控制"
+        android:icon="@drawable/nav_dev_control"/>
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:title="个人中心"
+        android:icon="@drawable/nav_person" />
+</menu>
