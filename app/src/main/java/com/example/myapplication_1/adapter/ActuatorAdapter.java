@@ -55,7 +55,7 @@ public class ActuatorAdapter extends BaseAdapter {
             //初始化条目的控件，设置图标、文本、点击事件处理
             viewHolder.ivIcon = convertView.findViewById(R.id.iv_icon);
             viewHolder.tvName = convertView.findViewById(R.id.tv_device_name);
-            viewHolder.btnDevice = convertView.findViewById(R.id.btn_open);
+            viewHolder.btnDevice = convertView.findViewById(R.id.stc_open);
 
             //设置标记
             convertView.setTag(viewHolder);

@@ -22,13 +22,18 @@
         android:layout_marginLeft="70dp"
         android:textSize="20sp"/>
 
-    <Button
-        android:id="@+id/btn_open"
+<!--    <Button-->
+<!--        android:id="@+id/btn_open"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_vertical"-->
+<!--        android:text="开"-->
+<!--        android:textSize="20sp"/>-->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/stc_open"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:text="开"
-        android:textSize="20sp"/>
-
+/>
 
 </LinearLayout>
