@@ -1,6 +1,7 @@
 package com.example.myapplication_1.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication_1.R;
+import com.example.myapplication_1.api.ThingsBoardHelp;
 import com.example.myapplication_1.model.SensorModel;
 
 import java.util.List;
@@ -20,6 +22,16 @@ import java.util.List;
 public class SensorsAdapter extends BaseAdapter {
     private Context context;
     private List<SensorModel> datas;
+    private double temp_max = 32;
+    private double temp_min = 20;
+    private double humid_max = 70;
+    private double humid_min = 40;
+    private double pm2d5_max = 35;
+    private double tvoc_max = 30;
+    private double red_radius_max = 50;
+    private double red_radius_min = 3;
+
+
 
     public SensorsAdapter(Context context, List<SensorModel>datas){
         this.context = context;
@@ -58,6 +70,7 @@ public class SensorsAdapter extends BaseAdapter {
             viewHolder.ivIcon = convertView.findViewById(R.id.iv_sensors);
             viewHolder.tvName = convertView.findViewById(R.id.tv_sensors_name);
             viewHolder.tvValue = convertView.findViewById(R.id.tv_sensors_value);
+            viewHolder.earlyWarning = convertView.findViewById(R.id.tv_early_warning);
             //设置标记
             convertView.setTag(viewHolder);
         }else{
@@ -72,6 +85,73 @@ public class SensorsAdapter extends BaseAdapter {
         viewHolder.tvValue.setText(sensor.getValue()+sensor.getUnit());
 
 
+        switch (sensor.getDeviceID()){
+            case ThingsBoardHelp.TEMP_DEVICE_ID:
+
+                if(sensor.getValue()>temp_max){
+                    viewHolder.earlyWarning.setText("建议：调低温度至32至20");
+                    viewHolder.earlyWarning.setTextColor(Color.RED);
+                }else if(sensor.getValue()<temp_min){
+                    viewHolder.earlyWarning.setText("建议：调高温度至32至20");
+                    viewHolder.earlyWarning.setTextColor(Color.RED);
+                }else{
+                    viewHolder.earlyWarning.setText("建议：无");
+                    viewHolder.earlyWarning.setTextColor(Color.GREEN);
+                }
+                break;
+            case ThingsBoardHelp.HUMI_DEVICE_ID:
+                if(sensor.getValue()>humid_max){
+                    viewHolder.earlyWarning.setText("建议：调低湿度至40至70");
+                    viewHolder.earlyWarning.setTextColor(Color.RED);
+                }else if(sensor.getValue()<humid_min){
+                    viewHolder.earlyWarning.setText("建议：调高湿度至40至70");
+                    viewHolder.earlyWarning.setTextColor(Color.RED);
+                }else{
+                    viewHolder.earlyWarning.setText("建议：无");
+                    viewHolder.earlyWarning.setTextColor(Color.GREEN);
+                }
+                break;
+            case ThingsBoardHelp.PM25_DEVICE_ID:
+                if(sensor.getValue()>pm2d5_max){
+                    viewHolder.earlyWarning.setText("建议：多打开风扇，增加通风");
+                    viewHolder.earlyWarning.setTextColor(Color.RED);
+                }else{
+                    viewHolder.earlyWarning.setText("建议：无");
+                    viewHolder.earlyWarning.setTextColor(Color.GREEN);
+                }
+                break;
+            case ThingsBoardHelp.TVOC_DEVICE_ID:
+                if(sensor.getValue()>tvoc_max){
+                    viewHolder.earlyWarning.setText("建议：多打开风扇，增加通风、合理安排饲养密度");
+                    viewHolder.earlyWarning.setTextColor(Color.RED);
+                }else{
+                    viewHolder.earlyWarning.setText("建议：无");
+                    viewHolder.earlyWarning.setTextColor(Color.GREEN);
+                }
+                break;
+            case ThingsBoardHelp.BODY_DEVICE_ID:
+                if(sensor.getValue()>red_radius_max){
+                    viewHolder.earlyWarning.setText("建议：体温异常，联系兽医进行检查");
+                    viewHolder.earlyWarning.setTextColor(Color.RED);
+                }else if(sensor.getValue()<red_radius_min){
+                    viewHolder.earlyWarning.setText("建议：体温异常，联系兽医进行检查");
+                    viewHolder.earlyWarning.setTextColor(Color.RED);
+                }else{
+                    viewHolder.earlyWarning.setText("建议：无");
+                    viewHolder.earlyWarning.setTextColor(Color.GREEN);
+                }
+                break;
+            case ThingsBoardHelp.PA_DEVICE_ID:
+                viewHolder.earlyWarning.setText("建议：无");
+                viewHolder.earlyWarning.setTextColor(Color.GREEN);
+
+                break;
+//                break;
+
+        }
+
+
+
         return convertView;
     }
 
@@ -80,5 +160,6 @@ public class SensorsAdapter extends BaseAdapter {
         ImageView ivIcon;
         TextView tvName;
         TextView tvValue;
+        TextView earlyWarning;
     }
 }

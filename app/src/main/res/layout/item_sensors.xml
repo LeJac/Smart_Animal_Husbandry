@@ -24,6 +24,13 @@
         android:textColor="#009688"
         android:text="20℃"
         android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/tv_early_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#009688"
+        android:text="建议：无"
+        android:textSize="10sp"/>
 
 
 </LinearLayout>
