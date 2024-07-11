@@ -25,7 +25,7 @@ public class DeviceControlActivity extends DeviceView {
     private List<ActuatorModel> actuators;
     private ActuatorAdapter actuatorAdapter;
 
-    private DeviceControlViewModel deviceControlViewModel;
+    private static DeviceControlViewModel deviceControlViewModel = null;
     private BottomNavigationView bottomNavigationView;
 
     public DeviceControlActivity() {
@@ -62,8 +62,10 @@ public class DeviceControlActivity extends DeviceView {
     }
 
     private void initData(){
-        deviceControlViewModel = new DeviceControlViewModel();
-        deviceControlViewModel.init(this);
+        if(deviceControlViewModel==null){
+            deviceControlViewModel = new DeviceControlViewModel();
+            deviceControlViewModel.init(this);
+        }
         actuators = deviceControlViewModel.getActuators();
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

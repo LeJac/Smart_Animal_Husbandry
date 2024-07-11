@@ -6,9 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.example.myapplication_1.R;
 import com.example.myapplication_1.model.ActuatorModel;
@@ -68,6 +69,7 @@ public class ActuatorAdapter extends BaseAdapter {
         viewHolder.ivIcon.setImageResource(device.getIconID());
         viewHolder.tvName.setText(device.getName());
         viewHolder.btnDevice.setText(device.getValue()==0?"开":"关");
+        viewHolder.btnDevice.setChecked(device.getValue()==1);
         //注册按钮的监听器
         viewHolder.btnDevice.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +99,6 @@ public class ActuatorAdapter extends BaseAdapter {
     class ViewHolder{
         ImageView ivIcon;
         TextView tvName;
-        Button btnDevice;
+        SwitchCompat btnDevice;
     }
 }

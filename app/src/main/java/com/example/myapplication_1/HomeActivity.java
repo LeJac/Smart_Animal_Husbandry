@@ -97,6 +97,7 @@ public class HomeActivity extends DeviceView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_demo);
 
+
         // 获取底部导航栏
         bottomNavigationView = findViewById(R.id.bottom_nav_view);
         // 设置底部导航栏的监听器, 监听跳转动作

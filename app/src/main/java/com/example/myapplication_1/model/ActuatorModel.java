@@ -16,7 +16,7 @@ import okhttp3.Response;
 
 public class ActuatorModel extends DeviceModel{
 
-    public ActuatorModel(DeviceView context, int iconID, String name, int state, String deviceID) {
+    public ActuatorModel(DeviceView context, int iconID, String name, int state , String deviceID) {
         super(context, iconID, name, deviceID, String.valueOf(state));
     }
 
