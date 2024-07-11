@@ -53,28 +53,44 @@ package com.example.myapplication_1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.MenuItem;
 import android.widget.GridView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication_1.adapter.SensorsAdapter;
 import com.example.myapplication_1.model.SensorModel;
+import com.example.myapplication_1.view.DeviceView;
 import com.example.myapplication_1.viewmodel.HomeViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends DeviceView {
 
 //    private ListView lvDevices;
     private GridView gvSensors;
 
 //    private List<ActuatorModel> devices;
     private List<SensorModel> sensors;
+    private SensorsAdapter sensorsAdapter;
     private HomeViewModel homeViewModel;
     private BottomNavigationView bottomNavigationView;
+
+    public HomeActivity() {
+        handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                //消息处理：当采集到传感器数据变化时，更新列表和网格的数据
+                if(msg.what == 200){
+                    sensorsAdapter.notifyDataSetChanged();
+                }
+            }
+        };
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,12 +110,13 @@ public class HomeActivity extends AppCompatActivity {
         //设置ListView的数据适配器
 //        lvDevices.setAdapter(new ActuatorAdapter(this, devices));
         //设置GridView的数据适配器
-        gvSensors.setAdapter(new SensorsAdapter(this,sensors));
+        sensorsAdapter = new SensorsAdapter(this, sensors);
+        gvSensors.setAdapter(sensorsAdapter);
     }
 
     private void initData(){
         homeViewModel = new HomeViewModel();
-        homeViewModel.init();
+        homeViewModel.init(this);
 //        devices = homeViewModel.getDevices();
         sensors = homeViewModel.getSensors();
     }

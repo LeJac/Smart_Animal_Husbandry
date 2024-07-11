@@ -73,13 +73,15 @@ public class ActuatorAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 //发送开关指令
-                double state = device.getValue();
+                int state = device.getValue();
                 Log.d("getView","设置前：state："+state);
                 if(state==0){
                     //发送打开设备指令
+                    device.control(1);
                     state = 1;
                 }else{
                     //发送关闭设备指令
+                    device.control(0);
                     state = 0;
                 }
                 Log.d("getView","设置后：state："+state);

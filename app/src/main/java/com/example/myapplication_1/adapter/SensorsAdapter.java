@@ -15,8 +15,8 @@ import com.example.myapplication_1.model.SensorModel;
 import java.util.List;
 
 /*
-* 设备列表适配器
-*/
+ * 设备列表适配器
+ */
 public class SensorsAdapter extends BaseAdapter {
     private Context context;
     private List<SensorModel> datas;
