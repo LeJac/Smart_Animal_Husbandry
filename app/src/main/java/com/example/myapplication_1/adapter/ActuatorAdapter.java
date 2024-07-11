@@ -68,7 +68,7 @@ public class ActuatorAdapter extends BaseAdapter {
         final ActuatorModel device = getItem(position);
         viewHolder.ivIcon.setImageResource(device.getIconID());
         viewHolder.tvName.setText(device.getName());
-        viewHolder.btnDevice.setText(device.getValue()==0?"开":"关");
+        viewHolder.btnDevice.setText(device.getValue()==0?"关":"开");
         viewHolder.btnDevice.setChecked(device.getValue()==1);
         //注册按钮的监听器
         viewHolder.btnDevice.setOnClickListener(new View.OnClickListener() {

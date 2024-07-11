@@ -33,6 +33,19 @@ public class ThingsBoardHelp {
     public static final String TVOC_DEVICE_NAME = "TVOC";
     public static final String TVOC_DEVICE_ID = "1cf7b320-39d4-11ef-a6dc-dfee39fa18bc";
 
+    public static final String FAN1_DEVICE_NAME = "风扇1";
+    public static final String FAN1_DEVICE_ID = "f95ac020-3f81-11ef-bb0b-ddcaf4ab0189";
+    public static final String FAN2_DEVICE_NAME = "风扇2";
+    public static final String FAN2_DEVICE_ID = "fbdf6f30-3f81-11ef-bb0b-ddcaf4ab0189";
+    public static final String WATERPORT1_DEVICE_NAME = "水泵1";
+    public static final String WATERPORT1_DEVICE_ID = "06b57b70-3f82-11ef-bb0b-ddcaf4ab0189";
+    public static final String WATERPORT2_DEVICE_NAME = "水泵2";
+    public static final String WATERPORT2_DEVICE_ID = "08155990-3f82-11ef-bb0b-ddcaf4ab0189";
+    public static final String FEEDPORT1_DEVICE_NAME = "进料口1";
+    public static final String FEEDPORT1_DEVICE_ID = "ffbc3430-3f81-11ef-bb0b-ddcaf4ab0189";
+    public static final String FEEDPORT2_DEVICE_NAME = "进料口2";
+    public static final String FEEDPORT2_DEVICE_ID = "01ec5aa0-3f82-11ef-bb0b-ddcaf4ab0189";
+
     public static final String LED0_DEVICE_NAME = "灯泡0";
     public static final String LED0_DEVICE_ID = "009ce130-39e5-11ef-bb0b-ddcaf4ab0189";
     public static final String LED1_DEVICE_NAME = "灯泡1";

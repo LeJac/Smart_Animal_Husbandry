@@ -14,18 +14,12 @@ public class DeviceControlViewModel {
 
     public void init(DeviceControlActivity context){
         actuators = new ArrayList<>();
-        actuators.add(new ActuatorModel(context, R.drawable.fan,"风扇1",0,ThingsBoardHelp.LED0_DEVICE_ID));
-        actuators.add(new ActuatorModel(context, R.drawable.fan,"风扇2",0,ThingsBoardHelp.LED1_DEVICE_ID));
-        actuators.add(new ActuatorModel(context, R.drawable.fan,"风扇3",0,ThingsBoardHelp.LED2_DEVICE_ID));
-        actuators.add(new ActuatorModel(context, R.drawable.light,"灯光1",0,"1"));
-        actuators.add(new ActuatorModel(context, R.drawable.light,"灯光2",0,"1"));
-        actuators.add(new ActuatorModel(context, R.drawable.light,"灯光3",0,"1"));
-        actuators.add(new ActuatorModel(context, R.drawable.feed,"进料口1",0,"1"));
-        actuators.add(new ActuatorModel(context, R.drawable.feed,"进料口2",0,"1"));
-        actuators.add(new ActuatorModel(context, R.drawable.feed,"进料口3",0,"1"));
-        actuators.add(new ActuatorModel(context, R.drawable.water,"水泵1",0,"1"));
-        actuators.add(new ActuatorModel(context, R.drawable.water,"水泵2",0,"1"));
-        actuators.add(new ActuatorModel(context, R.drawable.water,"水泵3",0,"1"));
+        actuators.add(new ActuatorModel(context, R.drawable.fan,ThingsBoardHelp.FAN1_DEVICE_NAME,0,ThingsBoardHelp.FAN1_DEVICE_ID));
+        actuators.add(new ActuatorModel(context, R.drawable.fan,ThingsBoardHelp.FAN2_DEVICE_NAME,0,ThingsBoardHelp.FAN2_DEVICE_ID));
+        actuators.add(new ActuatorModel(context, R.drawable.feed,ThingsBoardHelp.FEEDPORT1_DEVICE_NAME,0,ThingsBoardHelp.FEEDPORT1_DEVICE_ID));
+        actuators.add(new ActuatorModel(context, R.drawable.feed,ThingsBoardHelp.FEEDPORT2_DEVICE_NAME,0,ThingsBoardHelp.FEEDPORT2_DEVICE_ID));
+        actuators.add(new ActuatorModel(context, R.drawable.water,ThingsBoardHelp.WATERPORT1_DEVICE_NAME,0,ThingsBoardHelp.WATERPORT1_DEVICE_ID));
+        actuators.add(new ActuatorModel(context, R.drawable.water,ThingsBoardHelp.WATERPORT2_DEVICE_NAME,0,ThingsBoardHelp.WATERPORT2_DEVICE_ID));
         actuators.add(new ActuatorModel(context, R.drawable.light, ThingsBoardHelp.LED0_DEVICE_NAME, 0, ThingsBoardHelp.LED0_DEVICE_ID));
         actuators.add(new ActuatorModel(context, R.drawable.light, ThingsBoardHelp.LED1_DEVICE_NAME, 0, ThingsBoardHelp.LED1_DEVICE_ID));
         actuators.add(new ActuatorModel(context, R.drawable.light, ThingsBoardHelp.LED2_DEVICE_NAME, 0, ThingsBoardHelp.LED2_DEVICE_ID));
