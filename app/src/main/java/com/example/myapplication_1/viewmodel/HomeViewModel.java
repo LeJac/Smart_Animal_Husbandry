@@ -17,7 +17,7 @@ public class HomeViewModel {
         sensors.add(new SensorModel(context, R.drawable.humidity, ThingsBoardHelp.HUMI_DEVICE_NAME,0, "%RH", ThingsBoardHelp.HUMI_DEVICE_ID));
         sensors.add(new SensorModel(context, R.drawable.redray, ThingsBoardHelp.BODY_DEVICE_NAME,0, "", ThingsBoardHelp.BODY_DEVICE_ID));
         sensors.add(new SensorModel(context, R.drawable.pressure, ThingsBoardHelp.PA_DEVICE_NAME,0, "Pa", ThingsBoardHelp.PA_DEVICE_ID));
-        sensors.add(new SensorModel(context, R.drawable.co2, ThingsBoardHelp.PM25_DEVICE_NAME,0, "ppm", ThingsBoardHelp.PM25_DEVICE_ID));
+        sensors.add(new SensorModel(context, R.drawable.pm25, ThingsBoardHelp.PM25_DEVICE_NAME,0, "ppm", ThingsBoardHelp.PM25_DEVICE_ID));
         sensors.add(new SensorModel(context, R.drawable.tvoc, ThingsBoardHelp.TVOC_DEVICE_NAME,0, "ppm", ThingsBoardHelp.TVOC_DEVICE_ID));
 
         for(SensorModel sensor: sensors){

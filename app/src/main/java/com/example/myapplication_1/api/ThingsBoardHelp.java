@@ -24,7 +24,7 @@ public class ThingsBoardHelp {
     public static final String TEMP_DEVICE_ID = "0be14f60-39d4-11ef-a6dc-dfee39fa18bc";
     public static final String HUMI_DEVICE_NAME = "湿度";
     public static final String HUMI_DEVICE_ID = "131bbe50-39d4-11ef-bb0b-ddcaf4ab0189";
-    public static final String BODY_DEVICE_NAME = "人体红外";
+    public static final String BODY_DEVICE_NAME = "红外水平";
     public static final String BODY_DEVICE_ID = "15a46500-39d4-11ef-8811-19e854d50255";
     public static final String PA_DEVICE_NAME = "大气压";
     public static final String PA_DEVICE_ID = "18792fe0-39d4-11ef-bb0b-ddcaf4ab0189";

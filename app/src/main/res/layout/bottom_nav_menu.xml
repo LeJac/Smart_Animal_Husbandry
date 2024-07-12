@@ -16,4 +16,9 @@
         android:id="@+id/navigation_profile"
         android:title="个人中心"
         android:icon="@drawable/nav_person" />
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_warning"-->
+<!--        android:title="警告记录"-->
+<!--        android:icon="@drawable/nav_person" />-->
 </menu>

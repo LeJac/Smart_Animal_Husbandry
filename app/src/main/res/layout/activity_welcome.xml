@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -12,39 +11,45 @@
         android:scaleType="centerCrop"
         android:alpha="0.7"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
 
     <!-- 智慧畜牧文本位于图片左边 -->
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="智慧畜牧"
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         android:textStyle="italic"
-        android:layout_toLeftOf="@drawable/login_logo"
+        android:layout_toLeftOf="@id/image_center"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="25dp"/>
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"/>
 
     <!-- ImageView 放置在中心 -->
     <ImageView
+        android:id="@+id/image_center"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:src="@drawable/login_logo"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:alpha="0.8"
-        />
+        android:alpha="0.8"/>
 
     <!-- 科技助农文本位于图片右边 -->
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="科技助农"
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         android:textStyle="italic"
-        android:layout_toRightOf="@drawable/login_logo"
-        android:layout_marginLeft="230dp"
-        android:layout_centerVertical="true"/>
+        android:layout_toRightOf="@id/image_center"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"/>
 
 </RelativeLayout>
